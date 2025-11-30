@@ -7,4 +7,14 @@
     "theme_documentation_url": "https://shopiify-starter-theme.myshopify.com",
     "theme_support_email": "gfxashadul@gmail.com",
   },
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }
+    ]
+  }
 ]

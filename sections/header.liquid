@@ -1,40 +1,44 @@
 <div class="top-bar bg-black text-white text-center py-2">
-    <p>Sign up and get 20% off to your first order. <a href="">Sign Up Now</a></p>
+	<p>Sign up and get 20% off to your first order. <a href="">Sign Up Now</a></p>
 </div>
 <div class="py-6">
-    <div class="container">
-        <div class="flex items-center">
-            <div class="w-2/12">
-                <img src="{{ 'logo.png' | asset_url }}" alt="">
-            </div>
-            <div class="w-4/12">
-                <ul class="flex justify-center gap-6">
-                    <li><a href="">Shop</a></li>
-                    <li><a href="">On Sale</a></li>
-                    <li><a href="">New Arrival</a></li>
-                    <li><a href="">Brands</a></li>
-                </ul>
-            </div>
-            <div class="w-5/12">
-                <form action="" class="flex bg-[#f0f0f0] rounded-full items-center">
-                    <i class="fa-solid fa-magnifying-glass mx-4 text-2xl text-[#909090]"></i>
-                    <input class="p-4 w-full focus:outline-none" type="search" placeholder="Search Your Product">
-                </form>
-            </div>
-            <div class="w-1/12 flex justify-end gap-5">
-                <a href=""><img src="{{ 'icon.png' | asset_url }}" alt=""></a>
-                <a href=""><img src="{{ 'icon1.png' | asset_url }}" alt=""></a>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="flex items-center">
+			<div class="w-2/12">
+				{% if settings.logo != blank %}
+					<img src="{{ settings.logo | image_url }}" alt="{{ shop.name }}" width="auto" height="auto">
+				{% else %}
+					{{ shop.name }}
+				{% endif %}
+			</div>
+			<div class="w-4/12">
+				<ul class="flex justify-center gap-6">
+					<li><a href="">Shop</a></li>
+					<li><a href="">On Sale</a></li>
+					<li><a href="">New Arrival</a></li>
+					<li><a href="">Brands</a></li>
+				</ul>
+			</div>
+			<div class="w-5/12">
+				<form action="" class="flex bg-[#f0f0f0] rounded-full items-center">
+					<i class="fa-solid fa-magnifying-glass mx-4 text-2xl text-[#909090]"></i>
+					<input class="p-4 w-full focus:outline-none" type="search" placeholder="Search Your Product">
+				</form>
+			</div>
+			<div class="w-1/12 flex justify-end gap-5">
+				<a href="{{ routes.cart_url }}"><img src="{{ 'icon.png' | asset_url }}" alt=""></a>
+				<a href="{% if customer %} {{ routes.account_url }} {% else %} {{ routes.account_login_url }} {% endif %}"
+					><img src="{{ 'icon1.png' | asset_url }}" alt=""
+				></a>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% schema %}
-    {
-        "name": "Header",
-        "class": "header-section",
-        "settings": [
-        
-        ]
-    }
+{
+	"name": "Header",
+	"class": "SST Header",
+	"settings": []
+}
 {% endschema %}

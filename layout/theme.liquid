@@ -1,24 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{request.locale.iso_code}}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="{{ page_description | escape }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
-    <title>{{ page_title | escape }}</title>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="{{ page_description | escape }}">
+		<link rel="canonical" href="{{ canonical_url }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+		<title>{{ page_title | escape }}</title>
 
-    {{ 'style.css' | asset_url | stylesheet_tag }}
-    {{ 'output.css' | asset_url | stylesheet_tag }}
+		{{ 'style.css' | asset_url | stylesheet_tag }}
+		{{ 'output.css' | asset_url | stylesheet_tag }}
 
-    {{ content_for_header }}
-</head>
-<body>
+		{{ content_for_header }}
+	</head>
+	<body>
+		{% section 'header' %}
 
-    {% section 'header' %}
+		{{ content_for_layout }}
 
-    {{ content_for_layout }}
-
-    {{ content_for_footer }}   
-</body>
+		{{ content_for_footer }}
+	</body>
 </html>
