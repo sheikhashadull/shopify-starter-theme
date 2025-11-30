@@ -1,5 +1,0 @@
-[environments.starter]
-store = "shopiify-starter-theme.myshopify.com"
-password = "123"
-theme  = "shopify-starter-theme/main"
-theme-editor-sync = "true"
