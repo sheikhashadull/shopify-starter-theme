@@ -1,3 +1,10 @@
 [
-    
+  {
+    "name": "theme_info",
+    "theme_name": "Shopify Starter Theme",
+    "theme_author": "SST",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://shopiify-starter-theme.myshopify.com",
+    "theme_support_email": "gfxashadul@gmail.com",
+  },
 ]
