@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="{{ page_description | escape }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZmCcaYpYg0PTdF+W5jvQ2hKUg1hKq+kJQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
     <title>{{ page_title | escape }}</title>
 
     {{ 'style.css' | asset_url | stylesheet_tag }}
@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    {% sections 'header' %}
+    {% section 'header' %}
 
     {{ content_for_layout }}
 
