@@ -13,10 +13,9 @@
 			</div>
 			<div class="w-4/12">
 				<ul class="flex justify-center gap-6">
-					<li><a href="">Shop</a></li>
-					<li><a href="">On Sale</a></li>
-					<li><a href="">New Arrival</a></li>
-					<li><a href="">Brands</a></li>
+					{% for link in linklists['header-menu'].links %}
+						<li><a href="{{ link.url }}" class="{% if link.active %} font-semibold {% endif %}">{{ link.title }}</a></li>
+					{% endfor %}
 				</ul>
 			</div>
 			<div class="w-5/12">
