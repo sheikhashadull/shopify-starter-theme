@@ -21,11 +21,11 @@
 									{{- link.title -}}
 									<i class="fa-solid fa-angle-down text-[#383838]"></i>
 								</a>
-								<ul class="absolute left-0 top-full bg-[#f0f0f0] mt-2 p-4 rounded-md w-40 hidden group-hover:block shadow-lg z-10 text-base">
+								<ul class="absolute left-0 top-full bg-[#f0f0f0] mt-2 p-4 rounded-md w-50 hidden group-hover:block shadow-lg z-10 text-base">
 									{% for child in link.links %}
 										<li>
 											<a
-												class="block px-4 py-2 text-sm hover:bg-black rounded-md hover:text-white"
+												class="block px-4 py-2 text-sm hover:bg-black rounded-md hover:text-white text-[16px]"
 												href="{{ child.url }}"
 											>
 												{{- child.title -}}

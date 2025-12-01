@@ -312,6 +312,9 @@
   .w-44 {
     width: calc(var(--spacing) * 44);
   }
+  .w-50 {
+    width: calc(var(--spacing) * 50);
+  }
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
@@ -447,6 +450,9 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
+  .text-\[16px\] {
+    font-size: 16px;
+  }
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);
     line-height: calc(var(--spacing) * 5);
@@ -476,6 +482,9 @@
   }
   .text-\[\#f0f0f0\] {
     color: #f0f0f0;
+  }
+  .text-\[16\] {
+    color: 16;
   }
   .text-gray-600 {
     color: var(--color-gray-600);
