@@ -14,7 +14,7 @@
 
 			<div class="w-4/12">
 				<ul class="flex justify-center gap-6">
-					{% for link in linklists['header-menu'].links %}
+					{% for link in section.settings.menu.links %}
 						<li class=" relative group">
 							{% if link.links != blank %}
 								<a class="" href="{{ link.url }}">
@@ -63,6 +63,12 @@
 {
 	"name": "Header",
 	"class": "SST Header",
-	"settings": []
+	"settings": [
+		{
+			"type": "link_list",
+			"id": "menu",
+			"label": "Menu"
+		}
+	]
 }
 {% endschema %}
