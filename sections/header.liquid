@@ -11,13 +11,35 @@
 					{{ shop.name }}
 				{% endif %}
 			</div>
+
 			<div class="w-4/12">
 				<ul class="flex justify-center gap-6">
 					{% for link in linklists['header-menu'].links %}
-						<li><a href="{{ link.url }}" class="{% if link.active %} font-semibold {% endif %}">{{ link.title }}</a></li>
+						<li class=" relative group">
+							{% if link.links != blank %}
+								<a class="" href="{{ link.url }}">
+									{{- link.title -}}
+									<i class="fa-solid fa-angle-down text-[#383838]"></i>
+								</a>
+								<ul class="absolute left-0 top-full bg-[#f0f0f0] mt-2 p-4 rounded-md w-40 hidden group-hover:block shadow-lg z-10">
+									{% for child in link.links %}
+										<li>
+											<a class="block px-4 py-2 text-sm hover:bg-gray-100" href="{{ child.url }}">
+												{{- child.title -}}
+											</a>
+										</li>
+									{% endfor %}
+								</ul>
+							{% else %}
+								<a href="{{ link.url }}" class="{% if link.active %} font-semibold {% endif %}">
+									{{- link.title -}}
+								</a>
+							{% endif %}
+						</li>
 					{% endfor %}
 				</ul>
 			</div>
+
 			<div class="w-5/12">
 				<form action="" class="flex bg-[#f0f0f0] rounded-full items-center">
 					<i class="fa-solid fa-magnifying-glass mx-4 text-2xl text-[#909090]"></i>
