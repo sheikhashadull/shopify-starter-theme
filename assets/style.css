@@ -33,3 +33,15 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Integral CF', sans-serif;
     font-weight: 700;
 }
+button.slick-prev.slick-arrow {
+    position: absolute;
+    top: -80px;
+    right: 50px;
+    cursor: pointer
+}
+button.slick-next.slick-arrow {
+    position: absolute;
+    top: -80px;
+    right: 10px;
+    cursor: pointer
+}

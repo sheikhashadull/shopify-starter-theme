@@ -5,3 +5,12 @@
 .top-bar a{
   @apply underline font-semibold;
 }
+.title{
+  @apply text-[20px] capitalize font-bold my-2;
+}
+.rating i{
+  @apply text-[#FFC633];
+}
+.price {
+  @apply text-[24px] font-bold;
+}
