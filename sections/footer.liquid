@@ -27,67 +27,54 @@
 	</div>
 	<div class="pb-16 pt-32 bg-[#f0f0f0]">
 		<div class="container">
-			<div class="flex gap-5 border-b border-[#cccccc] my-10 pb-10 ">
-				<div class="w-4/12">
-					<img src="{{ 'logo.png' | asset_url }}" alt="">
-					<p class="my-10">
-						We have clothes that suits your style and which you’re proud to wear. From women to men.
-					</p>
-					<div class="flex gap-3">
-						<div class=" w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
-							<a href=""><i class="fa-brands fa-twitter"></i></a>
-						</div>
-						<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
-							<a href=""><i class="fa-brands fa-github"></i></a>
-						</div>
-						<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
-							<a href=""><i class="fa-brands fa-facebook-f"></i></a>
-						</div>
-						<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
-							<a href=""><i class="fa-brands fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="w-8/12">
-					<div class="flex gap-5">
-						<div class="w-3/12">
-							<div class="uppercase font-semibold tracking-[2px]">Company</div>
-							<ul class=" leading-9 my-4">
-								<li><a href="">About</a></li>
-								<li><a href="">Feature</a></li>
-								<li><a href="">Works</a></li>
-								<li><a href="">Career</a></li>
-							</ul>
-						</div>
-						<div class="w-3/12">
-							<div class="uppercase font-semibold tracking-[2px]">Company</div>
-							<ul class=" leading-9 my-4">
-								<li><a href="">About</a></li>
-								<li><a href="">Feature</a></li>
-								<li><a href="">Works</a></li>
-								<li><a href="">Career</a></li>
-							</ul>
-						</div>
-						<div class="w-3/12">
-							<div class="uppercase font-semibold tracking-[2px]">Company</div>
-							<ul class=" leading-9 my-4">
-								<li><a href="">About</a></li>
-								<li><a href="">Feature</a></li>
-								<li><a href="">Works</a></li>
-								<li><a href="">Career</a></li>
-							</ul>
-						</div>
-						<div class="w-3/12">
-							<div class="uppercase font-semibold tracking-[2px]">Company</div>
-							<ul class=" leading-9 my-4">
-								<li><a href="">About</a></li>
-								<li><a href="">Feature</a></li>
-								<li><a href="">Works</a></li>
-								<li><a href="">Career</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+			<div class="flex justify-between gap-5 border-b border-[#cccccc] my-10 pb-10 ">
+				{% for block in section.blocks %}
+					{% case block.type %}
+						{% when 'info' %}
+							<div class="w-4/12" {{ block.shopify_attributes }}>
+								<img src="{{ block.settings.logo | image_url }}" alt="">
+								<div class="my-10">
+									{{ block.settings.description }}
+								</div>
+								<div class="flex gap-3">
+									<div class=" w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
+										<a href="{{ block.settings.facebook }}"
+											><i class="fa-brands fa-facebook"></i
+										></a>
+									</div>
+									<div class=" w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
+										<a href="{{ block.settings.twitter }}"><i class="fa-brands fa-twitter"></i></a>
+									</div>
+									<div class=" w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
+										<a href="{{ block.settings.instragram }}"
+											><i class="fa-brands fa-instagram"></i
+										></a>
+									</div>
+									<div class=" w-10 h-10 bg-white rounded-full flex items-center justify-center border-2 border-[#cccccc]">
+										<a href="{{ block.settings.linkedin }}"
+											><i class="fa-brands fa-linkedin-in"></i
+										></a>
+									</div>
+								</div>
+							</div>
+
+						{% when 'useful_links' %}
+							<div class="w-2/12" {{ block.shopify_attributes }}>
+								<div class="uppercase font-semibold tracking-[2px]">
+									{{ block.settings.menu_title }}
+								</div>
+								<ul class=" leading-9 my-4">
+									{% for link in block.settings.menu_links.links %}
+										<li>
+											<a href="{{ link.url }}">{{ link.title }}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% else %}
+							select any block
+					{% endcase %}
+				{% endfor %}
 			</div>
 			<div class="flex items-center">
 				<div class="w-1/2">
@@ -129,8 +116,66 @@
 
 {% schema %}
 {
-	"name": "Footer",
-	"class": "SST Footer",
-	"settings": []
+	"name": "footer",
+	"class": "sst-footer",
+	"settings": [],
+	"blocks": [
+		{
+			"type": "info",
+			"name": "Info",
+			"limit": 1,
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "logo",
+					"label": "Logo"
+				},
+				{
+					"type": "textarea",
+					"id": "description",
+					"label": "Description",
+					"default": "We have clothes that suits your style and which you’re proud to wear. From women to men."
+				},
+				{
+					"type": "url",
+					"id": "facebook",
+					"label": "Facebook"
+				},
+				{
+					"type": "url",
+					"id": "instagram",
+					"label": "Instagram"
+				},
+				{
+					"type": "url",
+					"id": "twitter",
+					"label": "Twitter"
+				},
+				{
+					"type": "url",
+					"id": "linkedin",
+					"label": "Linkedin"
+				}
+			]
+		},
+		{
+			"type": "useful_links",
+			"name": "Useful links",
+			"limit": 4,
+			"settings": [
+				{
+					"type": "text",
+					"id": "menu_title",
+					"label": "Menu Title",
+					"default": "Company"
+				},
+				{
+					"type": "link_list",
+					"id": "menu_links",
+					"label": "Menu Links"
+				}
+			]
+		}
+	]
 }
 {% endschema %}

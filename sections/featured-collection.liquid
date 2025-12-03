@@ -1,0 +1,34 @@
+<div class="py-12">
+	<div class="container">
+		<h2 class="text-5xl text-center">Featured Collection</h2>
+		<div class="flex justify-between -mx-4 mt-20">
+			<div class="w-1/3 px-4 mb-12">
+				<div class="relative pb-[100%] overflow-hidden mb-4 bg-[#F0EEED]">
+					<img class="absolute w-full h-full object-cover" src="{{ 'product1.png' | asset_url }}" alt="">
+				</div>
+				<div class="title">T-shirt with tape details</div>
+				<div class="price">$120</div>
+			</div>
+		</div>
+		<div class="text-center border-b-1 border-[#dadada] ">
+			<a
+				class="py-[16px] px-[84px] inline-block border-1 border-[#dadada] font-semibold rounded-full mb-16"
+				href=""
+				>View All</a
+			>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Featured Collection",
+	"class": "featured-collection",
+	"settings": [],
+	"presets": [
+		{
+			"name": "Featured Collection"
+		}
+	]
+}
+{% endschema %}
