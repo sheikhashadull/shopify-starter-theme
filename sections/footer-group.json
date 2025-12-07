@@ -13,37 +13,6 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {
-        "info_LT8tLy": {
-          "type": "info",
-          "settings": {
-            "description": "We have clothes that suits your style and which you’re proud to wear. From women to men.",
-            "facebook": "",
-            "instagram": "",
-            "twitter": "",
-            "linkedin": ""
-          }
-        },
-        "useful_links_qknHK7": {
-          "type": "useful_links",
-          "settings": {
-            "menu_title": "Company",
-            "menu_links": "header-menu"
-          }
-        },
-        "useful_links_ARKFxy": {
-          "type": "useful_links",
-          "settings": {
-            "menu_title": "Company",
-            "menu_links": "footer"
-          }
-        }
-      },
-      "block_order": [
-        "info_LT8tLy",
-        "useful_links_qknHK7",
-        "useful_links_ARKFxy"
-      ],
       "settings": {}
     }
   },
