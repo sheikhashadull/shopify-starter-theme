@@ -1,12 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "type": "footer",
-    "name": "Footer",
-    "sections": {
-        "footer": {
-            "type": "footer",
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "info_LT8tLy": {
+          "type": "info",
+          "settings": {
+            "description": "We have clothes that suits your style and which you’re proud to wear. From women to men.",
+            "facebook": "",
+            "instagram": "",
+            "twitter": "",
+            "linkedin": ""
+          }
+        },
+        "useful_links_qknHK7": {
+          "type": "useful_links",
+          "settings": {
+            "menu_title": "Company",
+            "menu_links": "header-menu"
+          }
+        },
+        "useful_links_ARKFxy": {
+          "type": "useful_links",
+          "settings": {
+            "menu_title": "Company",
+            "menu_links": "footer"
+          }
         }
-    },
-    "order": [
-        "footer"
-    ]
+      },
+      "block_order": [
+        "info_LT8tLy",
+        "useful_links_qknHK7",
+        "useful_links_ARKFxy"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "footer"
+  ]
 }
