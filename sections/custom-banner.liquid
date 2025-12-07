@@ -1,11 +1,17 @@
-<div class="{{ section.id }}">
+<div class="{{ section.id }} color-{{ section.settings.color_scheme }}gradient">
     <h1>Hello</h1>
 </div>
 
 {% schema %}
     {
         "name": "Custom Banner",
-        "settings": [],
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "color_scheme",
+                "label": "Section Color"
+            }
+        ],
         "blocks": [],
         "presets": [
             {
