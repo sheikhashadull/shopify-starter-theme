@@ -16,5 +16,16 @@
         "label": "Logo"
       }
     ]
-  }
+  },
+  {
+  "name": "Color schemes",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_schemes",
+      "label": "Color Schemes"
+    }
+  ]
+}
+
 ]
